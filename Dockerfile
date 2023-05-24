@@ -45,18 +45,7 @@ RUN pacman --quiet --noconfirm -S libx11 \
     && cd ChezScheme && ./configure --threads --installschemename=chez-scheme \
     && make -j 4 && make install
 
-# installing utilities for the experiments
-# sice machines run kernel 3.10 which causes problems with Qt5
-# see https://bbs.archlinux.org/viewtopic.php?pid=1755257#p1755257
-ENV LIBS="-lgobject-2.0"
-RUN pacman --quiet --noconfirm -S cairo fribidi python libcerf harfbuzz libthai \
-    	   libxft gtk-doc glib2 gobject-introspection help2man meson gd pango \
-	   cantarell-fonts ttf-dejavu \
-    && wget http://downloads.sourceforge.net/sourceforge/gnuplot/gnuplot-5.2.6.tar.gz \
-    && tar -zxvf gnuplot-5.2.6.tar.gz && cd gnuplot-5.2.6 \
-    && ldconfig \
-    && ./configure --disable-wxwidgets --with-qt=no --with-x --with-readline=gnu \
-    && make -j 8 && make install
+RUN pacman --quiet --noconfirm -S gnuplot
 
 # installing Grift
 RUN raco pkg install grift
