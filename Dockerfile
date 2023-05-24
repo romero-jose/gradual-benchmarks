@@ -48,7 +48,7 @@ RUN pacman --quiet --noconfirm -S libx11 \
 RUN pacman --quiet --noconfirm -S gnuplot
 
 # installing Grift
-RUN raco pkg install grift
+RUN raco pkg install --deps search-auto grift
 WORKDIR /app
 ENV PATH="/root/.racket/${Racket_VER}/bin/:$PATH"
 
