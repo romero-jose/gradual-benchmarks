@@ -1,4 +1,4 @@
-FROM archlinux/base
+FROM archlinux:base
 
 RUN pacman --quiet --noconfirm -Syu
 RUN pacman --quiet --noconfirm -S base-devel git sudo time wget nano inetutils
