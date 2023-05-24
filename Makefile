@@ -1,6 +1,6 @@
-IMAGE_NAME=dalmahal90/grift-benchmarks:pldi19
+IMAGE_NAME=gradual-typing-benchmarks
 CONTAINER_NAME=benchmarks_container
-HOST_EXPERIMENT_DIR=/home/$(USER)/experiments
+HOST_EXPERIMENT_DIR=.
 CONTAINER_EXPERIMENT_DIR=/app/experiments
 DATE=$(shell date +%Y-%m-%d:%H:%M:%S)
 DOCKER_BUILD_FLAGS=--build-arg CACHE_DATE=$(DATE) --build-arg EXPR_DIR=$(CONTAINER_EXPERIMENT_DIR)
