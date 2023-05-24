@@ -5,7 +5,7 @@ RUN pacman --quiet --noconfirm -S base-devel git sudo time wget nano inetutils
 
 WORKDIR /app
 
-ENV Racket_VER=7.6
+ENV Racket_VER=8.8
 RUN wget https://mirror.racket-lang.org/installers/${Racket_VER}/racket-${Racket_VER}-x86_64-linux.sh \
     && chmod a+x racket-${Racket_VER}-x86_64-linux.sh \
     && ./racket-${Racket_VER}-x86_64-linux.sh --in-place --dest /root/racket
